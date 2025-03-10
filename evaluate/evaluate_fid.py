@@ -222,22 +222,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
     main(args)
 
-
-#058-DiT-XL-2_vaeretrained_forgettingpruned025_vae91000
-#064-DiT-XL-2_vaeretrained_inverseforgettingpruned025_vae91000
-#056-DiT-XL-2_vaeretrained_randompruned025_vae91000
-#063-DiT-XL-2_vaeretrained_clusterpruned025
-#062-DiT-XL-2_vaeretrained_randompruned06
-#59-DiT-XL-2_vaeretrained_vae91000
-#067-DiT-XL-2_vaeretrained_l2score_pruned025_vae91000
-#065-DiT-XL-2_vaeretrained_gradscore_pruned025_vae91000
-#072-DiT-XL-2_vaeretrained_pruned0998temp_vae91000
-#070-DiT-XL-2_vaeretrained_moso_pruned025_vae91000
-#067-DiT-XL-2_vaeretrained_l2score_pruned025_vae91000
-#068-DiT-XL-2_vaeretrained_randompruned099_vae91000
-#073-DiT-XL-2_vaeretrained_randompruned_pruned095_vae91000
-#075-DiT-XL-2_vaeretrained_inversemoso_pruned095_vae91000
-#079-DiT-XL-2_vaeretrained_randompruned09_vae91000
-#078-DiT-XL-2_vaeretrained_clusterpruned09_vae91000
-#077-DiT-XL-2_vaeretrained_grad_pruned095_vae91000
-#076-DiT-XL-2_vaeretrained_moso_pruned095_vae91000
