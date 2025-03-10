@@ -18,6 +18,6 @@ Source code has been taken and adapted from additional frameworks:
 
 [torch-kmeans](https://github.com/jokofa/torch_kmeans)
 
-[MoSo] (https://github.com/hrtan/MoSo)
+(MoSo)[https://github.com/hrtan/MoSo]
 
 
