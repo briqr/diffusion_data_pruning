@@ -10,3 +10,9 @@ to evaluate fid, please adjust evaluate_fid.sbatch
 
 Pretrained models will be released on google drive soon. 
 
+Source code has been taken and adapted from additional frameworks:
+[DiT](https://github.com/facebookresearch/DiT)
+[SiT](https://github.com/willisma/SiT)
+[torch-kmeans](https://github.com/jokofa/torch_kmeans)
+
+
