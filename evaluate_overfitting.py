@@ -18,7 +18,7 @@ from models import DiT_models
 import argparse
 from autoencoder import create_vae_encoder
 import os
-from retraindit_vaeretrained import  get_dataset
+from train import  get_dataset
 from torch.utils.data import DataLoader
 import numpy as np
 from torchvision import transforms
