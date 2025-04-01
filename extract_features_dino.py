@@ -17,7 +17,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from torch.utils.data import Subset
 from torchvision.datasets import ImageFolder as ImageFolder
-from retraindit_vaeretrained import get_dataset
+from train import get_dataset
 
 
 dinov2_vitl14 = torch.hub.load('facebookresearch/dinov2', 'dinov2_vits14').cuda()
