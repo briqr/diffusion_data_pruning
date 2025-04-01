@@ -10,7 +10,7 @@ from transformers import AutoProcessor, CLIPModel
 from torchvision import transforms
 from train import center_crop_arr
 import torch
-from retraindit_vaeretrained import get_dataset
+from train import get_dataset
 import os
 import numpy as np 
 from torchvision.datasets import ImageFolder as ImageFolder
