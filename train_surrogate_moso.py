@@ -38,7 +38,7 @@ import datasets
 datasets.transforms import build_transforms
 datasets import build_dataset
 from transport import create_transport
-from retraindit_vaeretrained import update_ema, requires_grad, get_dataset
+from train import update_ema, requires_grad, get_dataset
 
 #################################################################################
 #                             Training Helper Functions                         #
