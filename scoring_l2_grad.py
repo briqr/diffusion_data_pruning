@@ -40,7 +40,7 @@ datasets import build_dataset
 from transport import create_transport
 from torch.autograd import grad
 from download import find_model
-from retraindit_vaeretrained import get_dataset
+from train import get_dataset
 
 #################################################################################
 #                             Training Helper Functions                         #
