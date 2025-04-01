@@ -17,7 +17,7 @@ from torchvision.datasets import ImageFolder as ImageFolder
 from tqdm import tqdm 
 import argparse
 
-data_type = 'gen' #real
+data_type = 'real' #real
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print('using device ', device)
