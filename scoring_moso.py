@@ -41,7 +41,7 @@ from diffusion.gaussian_diffusion import mean_flat
 from functools import partial
 datasets.transforms import build_transforms
 datasets import build_dataset
-from retraindit_vaeretrained import get_dataset
+from train import get_dataset
 from transport import create_transport
 
 
