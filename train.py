@@ -33,7 +33,6 @@ import os
 from torch.utils.data import Subset
 from image_folder import ImageFolderFilenames
 from models import DiT_models
-from retrain import random_opt, nopt2, nopt2_keys
 from diffusion import create_diffusion
 from diffusers.models import AutoencoderKL
 from autoencoder import create_vae_encoder
@@ -49,6 +48,55 @@ import logging
 #################################################################################
 #                             Training Helper Functions                         #
 #################################################################################
+
+
+def nopt2(scores, pr, largest=True, is_mid=False):
+    # S: dict
+    # size: the subset size
+    num_samples = int(len(scores) * pr )
+    print('nopt2 number of samples', num_samples)
+    pool = torch.tensor(scores)
+    pool = pool.squeeze()
+    if is_mid:
+        pruning_ratio = (1 - pr)/2
+        num_pruning_largest = int(len(scores) * pruning_ratio)
+    else: 
+        num_pruning_largest = 0
+    index_all = pool.topk(num_samples+num_pruning_largest, largest=largest)[1]
+    index_all = index_all[num_pruning_largest:]
+    return index_all
+
+
+#the scores order does not correspond to indices
+
+def nopt2_keys(scores_map, pr, largest=True, is_mid=False):
+    num_samples = int(len(scores_map) * pr )
+    sorted_ratios = sorted(scores_map.items(), key = lambda x:x[1], reverse=largest)
+    top_keys = []
+    if is_mid:
+        start_index = int(len(scores_map) * (1 - pr)/2)
+    else:
+        start_index = 0
+    for key, val in sorted(sorted_ratios)[start_index:num_samples]:
+        top_keys.append(key)
+    return top_keys
+
+
+
+
+def random_opt(len_d, pr):
+    # S: dict
+    # size: the subset size
+    print('random selecting....')
+    subset_size = int(len_d * pr )
+    print('**************subset size', subset_size)
+    #size = 32
+    pool = torch.rand(len_d)
+    print('pool shape, size', pool.shape, subset_size)
+    
+    index = pool.topk(subset_size)
+    return index
+
 
 @torch.no_grad()
 def update_ema(ema_model, model, decay=0.9999):
