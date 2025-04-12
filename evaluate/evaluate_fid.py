@@ -175,7 +175,7 @@ def main(args):
                 samples = vae.decode(samples / scale_factor) 
             else:
                 samples = vae.decode(samples / scale_factor).sample
-
+            samples = torch.clamp(samples, -1.0, 1.0)
             samples = (((samples*0.5)+0.5)  *255).type(torch.uint8)
             all_samples.append(samples)
 
